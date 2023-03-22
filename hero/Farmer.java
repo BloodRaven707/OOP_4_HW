@@ -1,14 +1,22 @@
 package hero;
 
+import java.util.ArrayList;
 
-public class Farmer extends Hero {
+public class Farmer extends BaseHero {
     public Farmer( String name,
-    int attack, int defense, int damage,
-    int health, int speed, int delivery, int posX, int posY ) {
-        super( name, attack, defense, 0, damage, damage, health, speed, delivery, 0, posX, posY );
+                   int health, int attack, int defense, int speed,
+                   int damage, int posX, int posY ) {
+        super( name, health, attack, defense, speed, damage, posX, posY );
+        this.type = "Farmer";
     }
 
+
     public Farmer( String name, int posX, int posY  ) {
-        this( name, 1, 1, 1, 1, 3, 1, posX, posY );
+        this( name, 3, 1, 1, 1, 1, posX, posY );
+    }
+
+
+    public void doTurn( ArrayList<BaseHero> enemy ) {
+        System.out.println( "Крестьяне не могут атаковать дистанционно" );
     }
 }
